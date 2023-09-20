@@ -6,7 +6,7 @@
 /*   By: jmelende <jmelende@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 23:21:35 by jmelende          #+#    #+#             */
-/*   Updated: 2023/09/13 23:21:36 by jmelende         ###   ########.fr       */
+/*   Updated: 2023/09/20 18:37:37 by jmelende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,19 @@
 
 void	*ft_memcpy(void *dst, const void *src, size_t len)
 {
+	size_t	i;
 	char	*char_dst;
 	char	*char_src;
 
-	if (dst == NULL)
+	if (dst == NULL && src == NULL)
 		return (NULL);
+	i = 0;
 	char_dst = (char *) dst;
 	char_src = (char *) src;
-	while (len--)
+	while (i < len)
 	{
-		*char_dst++ = *char_src++;
+		char_dst[i] = char_src[i];
+		i++;
 	}
 	return (dst);
 }
